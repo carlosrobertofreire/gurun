@@ -16,6 +16,7 @@ def index():
     if request.method == 'POST':
         nome = request.form['nome']
         analise = Numerologia.analisar(nome)
+        analise.resultado = analise.resultado.decode('unicode-escape')
         analise.save()
         return render_template('index.html', analise = analise)
     else:

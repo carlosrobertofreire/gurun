@@ -1,11 +1,11 @@
-from dynamodb_mapper.model import DynamoDBModel
+from dynamodb_mapper.model import DynamoDBModel, autoincrement_int
 
 class Analise(DynamoDBModel):
     __table__ = u"numerologia-ws-analises"
     __hash_key__ = u"nome"
     __schema__ = {
             u"nome": unicode,
-            u"valor": int,
+            u"valor": float,
             u"resultado": unicode,
      }
 
