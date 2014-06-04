@@ -1,3 +1,14 @@
+from dynamodb_mapper.model import DynamoDBModel
+
+class Analise(DybamoDBModel):
+    __table__ = u"numerologia-ws-analises"
+    __hash_key__ = u"nome"
+    __schema__ = {
+            u"nome": unicode,
+            u"valor": int
+            u"resultado": unicode,
+     }
+
 class Numerologia:
     @staticmethod
     def analisar(nome):
