@@ -1,11 +1,11 @@
 from dynamodb_mapper.model import DynamoDBModel
 
-class Analise(DybamoDBModel):
+class Analise(DynamoDBModel):
     __table__ = u"numerologia-ws-analises"
     __hash_key__ = u"nome"
     __schema__ = {
             u"nome": unicode,
-            u"valor": int
+            u"valor": int,
             u"resultado": unicode,
      }
 
@@ -24,28 +24,32 @@ class Numerologia:
                 continue
             else:
                 soma = soma + dic[letra.upper()]
-        resultado = 0
+        resultadoSoma = 0
         if soma <=  22:
-            resultado = soma
+            resultadoSoma = soma
         else:
             somaString = str(soma)
             somaFinal = 0
             letras = list(somaString)
             for letra in letras:
                 somaFinal = somaFinal + float(letra)
-            resultado = somaFinal
+            resultadoSoma = somaFinal
         excelente = {11,22,14,17,19,9,7,25}
         bom = {8,4,3,20,5,23}
         pessimo = {16,18,10,15,13,12,21}
         ruim = {6}
-        if resultado in excelente:
-            analise = 'EXCELENTE'
-        elif resultado in bom:
-            analise = 'BOM'
-        elif resultado in pessimo:
-            analise = 'PESSIMO'
-        elif resultado in ruim:
-            analise = 'RUIM'
+        if resultadoSoma in excelente:
+            resultadoAnalise = 'EXCELENTE'
+        elif resultadoSoma in bom:
+            resultadoAnalise = 'BOM'
+        elif resultadoSoma in pessimo:
+            resultadoAnalise = 'PESSIMO'
+        elif resultadoSoma in ruim:
+            resultadoAnalise = 'RUIM'
         else:
-            analise = 'NAO INTERPRETADO'
+            resultadoAnalise = 'NAO INTERPRETADO'
+        analise = Analise()
+        analise.nome = nome
+        analise.valor = resultadoSoma
+        analise.resultado = resultadoAnalise
         return analise
