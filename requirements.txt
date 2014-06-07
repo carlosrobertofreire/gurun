@@ -3,7 +3,7 @@ Jinja2==2.7.2
 MarkupSafe==0.23
 Werkzeug==0.9.4
 argparse==1.2.1
-boto==2.6.0
+boto==2.29.1
 dynamodb-mapper==1.8.1
 onctuous==0.5.84
 wsgiref==0.1.2
