@@ -1,10 +1,21 @@
-from dynamodb_mapper.model import DynamoDBModel, autoincrement_int
+from dynamodb_mapper.model import DynamoDBModel, utc_tz
+from datetime import datetime
+import pytz
+
+local_tz = pytz.timezone('America/Sao_Paulo')
+
+def utc_to_local(utc_dt):
+    local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
+    print local_tz.normalize(local_dt)
+    return local_tz.normalize(local_dt)
 
 class Analise(DynamoDBModel):
     __table__ = u"numerologia-ws-analises"
     __hash_key__ = u"nome"
+    __range_key__ = u"data"
     __schema__ = {
             u"nome": unicode,
+            u"data": datetime,
             u"valor": float,
             u"resultado": unicode,
      }
@@ -50,6 +61,7 @@ class Numerologia:
             resultadoAnalise = 'NAO INTERPRETADO'
         analise = Analise()
         analise.nome = nome
+        analise.data = utc_to_local(datetime.now(utc_tz))
         analise.valor = resultadoSoma
         analise.resultado = resultadoAnalise
         return analise
