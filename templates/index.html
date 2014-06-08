@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Numerologia WS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
@@ -24,32 +24,12 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+
+      </head>
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-    <div class="container">
 
       <div class="starter-template">
         <h1>Bootstrap starter template</h1>
@@ -57,7 +37,7 @@
       </div>
       <form action="" method="post">
           <p><input type="text" name="nome" /></p>
-          <p><input type="submit" value="Submit" /></p>
+          <p><input type="submit" value="Analisar" /></p>
       </form>
       {% if analise %}
         <h1>Nome: {{ analise.nome }}</h1>
@@ -72,6 +52,13 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){ 
+            jQuery('input[type=text]').keyup(function() {
+                this.value = this.value.toLocaleUpperCase();
+            });
+        });
+    </script>
   </body>
 </html>
 
