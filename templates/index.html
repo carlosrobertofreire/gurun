@@ -37,7 +37,7 @@
                 <div class="input-group input-group-lg">
                     <input type="text" class="form-control" placeholder="Digite o nome a ser analisado" name="nome" >
                     <span class="input-group-btn">
-                        <button class="btn btn-primary" type="submit">Analisar!</button>
+                        <button class="btn btn-primary" type="submit" disabled="disabled">Analisar!</button>
                     </span>
                 </div><!-- /input-group input-group-lg -->
              </form>
@@ -75,6 +75,11 @@
                     jQuery(this).val(jQuery(this).val().replace(forbiddenChars, ''));
                 }
                 this.value = this.value.toLocaleUpperCase();
+                if (jQuery(this).val() != '') { 
+                    jQuery('button[type=submit]').removeAttr('disabled');
+                } else{                    
+                    jQuery('button[type=submit]').attr('disabled','disabled');
+                }
             });
         });
     </script>
