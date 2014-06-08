@@ -1,3 +1,5 @@
+# coding=UTF-8
+
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -16,7 +18,7 @@ def index():
     if request.method == 'POST':
         nome = request.form['nome']
         analise = Numerologia.analisar(nome)
-        analise.resultado = analise.resultado.decode('unicode-escape')
+        analise.resultado = analise.resultado.decode('utf-8')
         analise.save()
         return render_template('index.html', analise = analise)
     else:

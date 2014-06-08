@@ -1,3 +1,5 @@
+# coding=UTF-8
+
 from dynamodb_mapper.model import DynamoDBModel, utc_tz
 from datetime import datetime
 import pytz
@@ -59,11 +61,11 @@ class Numerologia:
         elif resultadoSoma in bom:
             resultadoAnalise = 'BOM'
         elif resultadoSoma in pessimo:
-            resultadoAnalise = 'PESSIMO'
+            resultadoAnalise = 'PÉSSIMO'
         elif resultadoSoma in ruim:
             resultadoAnalise = 'RUIM'
         else:
-            resultadoAnalise = 'NAO INTERPRETADO'
+            resultadoAnalise = 'NÃO INTERPRETADO'
         analise = Analise()
         analise.nome = nome
         analise.data = utc_to_local(datetime.now(utc_tz))
