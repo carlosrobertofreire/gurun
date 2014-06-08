@@ -16,34 +16,41 @@
     <!-- Custom styles for this template -->
     <link href="../static/css/starter-template.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-      </head>
+  </head>
 
   <body>
 
-      <div class="container">
+    <div class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-      <form action="" method="post">
-          <p><input type="text" name="nome" /></p>
-          <p><input type="submit" value="Analisar" /></p>
-      </form>
-      {% if analise %}
+        <h1>Numerologia WS</h1>
+        <p class="lead">Análise de nomes simples, direta e sem propagandas.</p>
+
+        <div class="col-lg-6">         
+            <form action="" method="post" role="form">
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" placeholder="Digite o nome a ser analisado" name="nome" >
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Analisar!</button>
+                    </span>
+                </div><!-- /input-group input-group-lg -->
+             </form>
+        </div><!-- /.col-lg-6 -->
+
+        {% if analise %}
         <h1>Nome: {{ analise.nome }}</h1>
         <h1>Resultado: {{ analise.resultado }}</h1>
-      {% endif %}
+        {% endif %}
 
+      </div><!-- /.starter-template-->
+
+      
     </div><!-- /.container -->
 
 
