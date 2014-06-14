@@ -21,7 +21,13 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    
+    <style>
+        .col-centered{
+            margin: 0 auto;
+            float: none;
+        }
+    </style>
   </head>
 
   <body>
@@ -30,15 +36,19 @@
 
       <div class="starter-template">
          <img src="../static/img/png/logo256.png" class="img-responsive center-block" alt="Logo - Numerologia WS" />
-         <br />   
-        <form action="" method="post" class="col-lg-12">
-            <div class="input-group" style="width:600px; text-align:center; margin:0 auto;">
-                <input type="text" class="form-control input-lg" placeholder="Digite o nome a ser analisado..." name="nome" >
-                <span class="input-group-btn">
-                    <button class="btn btn-lg btn-primary" type="submit" disabled="disabled">Analisar</button>
-                </span>
-            </div><!-- /input-group -->
-        </form><!-- /.col-lg-12 -->
+         <br />
+         <div class="row">
+             <div class="col-lg-8 col-centered">
+                    <form action="" method="post">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-lg" placeholder="Digite o nome a ser analisado..." name="nome" >
+                            <span class="input-group-btn">
+                                <button class="btn btn-lg btn-primary" type="submit" disabled="disabled">Analisar</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+            </div>
+        </div>
         {% if analise %}
         <h1>Nome: {{ analise.nome }}</h1>
         <h1>Resultado: {{ analise.resultado }}</h1>
