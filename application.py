@@ -32,6 +32,6 @@ if __name__ == '__main__':
         conn.create_table(Analise, 5, 5, wait_for_active=True)
         print "Tabela criada!"
     except:
-        print "Erro durante criacao de tabela!"
+        print "Erro durante criação de tabela!"
         pass
     application.run(host='0.0.0.0', debug=True)
