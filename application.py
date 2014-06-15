@@ -29,7 +29,7 @@ if __name__ == '__main__':
         print "Criando tabela..."
         conn = ConnectionBorg()
         conn.set_region("sa-east-1")
-        conn.create_table(Analise, 1, 1, wait_for_active=True)
+        conn.create_table(Analise, 5, 5, wait_for_active=True)
         print "Tabela criada!"
     except:
         print "Erro durante criacao de tabela!"
