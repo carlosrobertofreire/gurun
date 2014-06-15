@@ -69,6 +69,6 @@ class Numerologia:
         analise = Analise()
         analise.nome = nome
         analise.data = utc_to_local(datetime.now(utc_tz))
-        analise.valor = resultadoSoma
+        analise.valor = resultadoSoma + 0.0
         analise.resultado = resultadoAnalise
         return analise
