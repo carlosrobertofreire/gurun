@@ -35,25 +35,40 @@
     <div class="container">
 
       <div class="starter-template">
-         <img src="../static/img/png/logo256.png" class="img-responsive center-block" alt="Logo - Numerologia WS" />
+         <img src="../static/img/png/logo128.png" class="img-responsive center-block" alt="Logo - Numerologia WS" />
          <br />
          <div class="row">
-             <div class="col-lg-8 col-centered">
+            <div class="col-lg-8 col-centered">
                     <form action="" method="post">
                         <div class="input-group">
                             <input type="text" class="form-control input-lg" placeholder="Digite o nome a ser analisado..." name="nome" >
                             <span class="input-group-btn">
                                 <button class="btn btn-lg btn-primary" type="submit" disabled="disabled">Analisar</button>
                             </span>
-                        </div><!-- /input-group -->
-                    </form>
-            </div>
-        </div>
+                        </div> <!-- /.input-group -->
+                   </form>
+            </div><!-- /.col-lg-8 -->
+         </div><!-- /.row -->
+        
         {% if analise %}
-        <h1>Nome: {{ analise.nome }}</h1>
-        <h1>Resultado: {{ analise.resultado }}</h1>
+        <div class="row">
+            <h3><strong>{{ analise.nome }}</strong>
+            <br/>
+            {% if analise.resultado == 'EXCELENTE' %}             
+                <span class="label label-success">{{ analise.resultado }}</span>
+            {% elif analise.resultado == 'BOM' %}
+                <span class="label label-info">{{ analise.resultado }}</span>
+            {% elif analise.resultado == 'RUIM' %}
+                <span class="label label-warning">{{ analise.resultado }}</span>
+            {% elif analise.resultado == 'PÉSSIMO' %}
+                <span class="label label-danger">{{ analise.resultado }}</span>
+            {% else %}
+                <span class="label label-default">{{ analise.resultado }}</span>
+            {% endif %}
+            </h3>
+        </div><!-- /.row -->
         {% endif %}
-
+ 
       </div><!-- /.starter-template-->
 
       
