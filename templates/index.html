@@ -12,11 +12,9 @@
 
     <link rel="shortcut icon" href="../static/img/ico/favicon.ico">
 
-    <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="../static/css/starter-template.css" rel="stylesheet">
+    <link href="../static/css/numerologia-ws.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,12 +22,6 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <style>
-        .col-centered{
-            margin: 0 auto;
-            float: none;
-        }
-    </style>
   </head>
 
   <body>
@@ -72,7 +64,6 @@
         {% endif %}
  
       </div><!-- /.starter-template-->
-
       
     </div><!-- /.container -->
 
@@ -82,29 +73,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function(){ 
-            jQuery('input[type=text]').keypress(function (e) {
-	            var allowedChars = new RegExp("^[a-zA-ZÀ-ú\\s]+$");
-	            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-	            if (allowedChars.test(str)) {
-		            return true;
-	            }
-	            e.preventDefault();
-	            return false;		    
-	        }).keyup(function() {
-                var forbiddenChars = new RegExp("[^a-zA-ZÀ-ú\\s]", 'g');
-                if (forbiddenChars.test(jQuery(this).val())) {
-                    jQuery(this).val(jQuery(this).val().replace(forbiddenChars, ''));
-                }
-                this.value = this.value.toLocaleUpperCase();
-                if (jQuery(this).val() != '') { 
-                    jQuery('button[type=submit]').removeAttr('disabled');
-                } else{                    
-                    jQuery('button[type=submit]').attr('disabled','disabled');
-                }
-            });
-        });
-    </script>
+    <script src="../static/js/numerologia-ws.js"></script>
+
   </body>
 </html>
