@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){ 
+    jQuery('input[type=text]').first().focus();
     jQuery('input[type=text]').keypress(function (e) {
         var allowedChars = new RegExp("^[a-zA-ZÀ-ú\\s]+$");
         var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
