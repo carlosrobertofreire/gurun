@@ -35,5 +35,9 @@ def index():
 def internal_error(error):
     return render_template('500.html'), 500
 
+@application.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == '__main__':
     application.run(host='0.0.0.0', debug=False)
