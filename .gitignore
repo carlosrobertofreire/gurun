@@ -42,4 +42,9 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# Elastic Beanstalk Configuration
 .elasticbeanstalk/
+
+# GEdit Temporary Files
+*~

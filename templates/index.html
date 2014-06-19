@@ -1,79 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <title>Numerologia WS</title>
-    
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="content-language" content="pt-br">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Análise numerológica de nomes de forma simples, direta e sem propagandas.">
-    <meta name="keywords" content="numerologia, sorte, an&aacute;lise, nome, nomes, consulta, astrologia">
+{% extends 'base.html' %}
 
-    <link rel="shortcut icon" href="../static/img/ico/favicon.ico">
+{% block content %}
+<img src="../static/img/png/logo128.png" class="img-responsive center-block" alt="Numerologia WS" />
+<br />
 
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/starter-template.css" rel="stylesheet">
-    <link href="../static/css/numerologia-ws.css" rel="stylesheet">
+<div class="row">
+    <div class="col-lg-8 col-centered">
+            <form action="" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control input-lg" placeholder="Digite o nome a ser analisado..." name="nome" >
+                    <span class="input-group-btn">
+                        <button class="btn btn-lg btn-primary" type="submit" disabled="disabled">Analisar</button>
+                    </span>
+                </div> <!-- /.input-group -->
+           </form>
+    </div><!-- /.col-lg-8 -->
+</div><!-- /.row -->
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-  </head>
+{% if analise %}
+<div class="row">
+    <h3><strong>{{ analise.nome }}</strong>
+    <br/>
+    {% if analise.resultado == 'EXCELENTE' %}             
+        <span class="label label-success">{{ analise.resultado }}</span>
+    {% elif analise.resultado == 'BOM' %}
+        <span class="label label-info">{{ analise.resultado }}</span>
+    {% elif analise.resultado == 'RUIM' %}
+        <span class="label label-warning">{{ analise.resultado }}</span>
+    {% elif analise.resultado == 'PÉSSIMO' %}
+        <span class="label label-danger">{{ analise.resultado }}</span>
+    {% else %}
+        <span class="label label-default">{{ analise.resultado }}</span>
+    {% endif %}
+    </h3>
+</div><!-- /.row -->
+{% endif %}
 
-  <body>
-
-    <div class="container">
-
-      <div class="starter-template">
-         <img src="../static/img/png/logo128.png" class="img-responsive center-block" alt="Numerologia WS" />
-         <br />
-         <div class="row">
-            <div class="col-lg-8 col-centered">
-                    <form action="" method="post">
-                        <div class="input-group">
-                            <input type="text" class="form-control input-lg" placeholder="Digite o nome a ser analisado..." name="nome" >
-                            <span class="input-group-btn">
-                                <button class="btn btn-lg btn-primary" type="submit" disabled="disabled">Analisar</button>
-                            </span>
-                        </div> <!-- /.input-group -->
-                   </form>
-            </div><!-- /.col-lg-8 -->
-         </div><!-- /.row -->
-        
-        {% if analise %}
-        <div class="row">
-            <h3><strong>{{ analise.nome }}</strong>
-            <br/>
-            {% if analise.resultado == 'EXCELENTE' %}             
-                <span class="label label-success">{{ analise.resultado }}</span>
-            {% elif analise.resultado == 'BOM' %}
-                <span class="label label-info">{{ analise.resultado }}</span>
-            {% elif analise.resultado == 'RUIM' %}
-                <span class="label label-warning">{{ analise.resultado }}</span>
-            {% elif analise.resultado == 'PÉSSIMO' %}
-                <span class="label label-danger">{{ analise.resultado }}</span>
-            {% else %}
-                <span class="label label-default">{{ analise.resultado }}</span>
-            {% endif %}
-            </h3>
-        </div><!-- /.row -->
-        {% endif %}
- 
-      </div><!-- /.starter-template-->
-      
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/numerologia-ws.js"></script>
-
-  </body>
-</html>
+{% endblock %}
