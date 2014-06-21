@@ -1,3 +1,3 @@
-# numerologia-ws #
+# Numerologia WS #
 
-Consulta numerológica simples, direta e gratuita.
+Análise numerológica de nomes de forma simples, direta e sem propagandas.
