@@ -54,9 +54,9 @@ class Numerologia:
                 somaFinal = somaFinal + float(letra)
             resultadoSoma = somaFinal
         excelente = {11,22,14,17,19,9,7,25}
-        bom = {8,4,3,20,5,23}
-        pessimo = {16,18,10,15,13,12,21}
-        ruim = {6}
+        bom = {2,8,4,3,20,5,23,22}
+        pessimo = {1,16,18,10,15,13,12,21}
+        ruim = {6,24}
         if resultadoSoma in excelente:
             resultadoAnalise = 'EXCELENTE'
         elif resultadoSoma in bom:
