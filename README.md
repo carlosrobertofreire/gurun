@@ -1,3 +1,3 @@
 # Numerologia WS #
 
-Análise numerológica de nomes de forma simples, direta e sem propagandas.
+Análise numerológica de nomes de forma simples, gratuita e sem propagandas.
