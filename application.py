@@ -7,6 +7,8 @@ from models import Analise, Numerologia
 
 from dynamodb_mapper.model import ConnectionBorg
 
+from flask.ext.cdn import CDN
+
 try:
     conn = ConnectionBorg()
     conn.set_region("sa-east-1")
@@ -16,9 +18,11 @@ except:
 
 application = Flask(__name__)
 
-#Set application.debug=true to enable tracebacks on Beanstalk log output.
-#Make sure to remove this line before deploying to production.
-application.debug=False
+application.debug = False
+
+application.config['CDN_DOMAIN'] = 'cdn.numerologia.ws'
+application.config['CDN_TIMESTAMP'] = False
+CDN(application)
 
 @application.route('/', methods=['POST','GET'])
 def index():
@@ -40,4 +44,4 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', debug=False)
+    application.run(host='0.0.0.0')
