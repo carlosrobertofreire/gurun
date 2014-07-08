@@ -9,6 +9,8 @@ from dynamodb_mapper.model import ConnectionBorg
 
 from flask.ext.cdn import CDN
 
+from flask.ext.compress import Compress
+
 try:
     conn = ConnectionBorg()
     conn.set_region("sa-east-1")
@@ -23,6 +25,8 @@ application.debug = False
 application.config['CDN_DOMAIN'] = 'cdn.numerologia.ws'
 application.config['CDN_TIMESTAMP'] = False
 CDN(application)
+
+Compress(application)
 
 @application.route('/', methods=['POST','GET'])
 def index():
