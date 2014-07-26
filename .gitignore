@@ -48,3 +48,9 @@ docs/_build/
 
 # GEdit Temporary Files
 *~
+
+# https://pypi.python.org/pypi/rope
+.ropeproject
+
+# Ignore SQLite database
+*.sqlite3
