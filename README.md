@@ -1,6 +1,6 @@
 ![Picture](http://cdn.numerologia.ws/static/img/png/logo128.png) 
 
-# Numerologia WS
+# Numerologia WS #
 
 ### O que é? ###
 Análise numerológica de nomes de forma simples, gratuita e sem propagandas. 
