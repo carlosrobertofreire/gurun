@@ -1,5 +1,6 @@
 # coding=UTF-8
-from models import Analise, utc_to_local, remover_acentos
+from models import Analise
+from util import utc_to_local, remover_acentos
 from datetime import datetime
 from dynamodb_mapper.model import utc_tz
 
