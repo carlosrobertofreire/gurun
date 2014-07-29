@@ -29,7 +29,7 @@ class Analise(DynamoDBModel):
         }
 
 
-DICTIONARY = {
+DICIONARIO = {
     'A': 1,
     'B': 2,
     'C': 3,
@@ -76,7 +76,7 @@ class Numerologia:
             elif letra.isspace() and not letra.isLetter():
                 continue
             else:
-                soma = soma + DICTIONARY[letra]
+                soma = soma + DICIONARIO[letra]
         resultadosoma = 0
         if soma <= 22:
             resultadosoma = soma
