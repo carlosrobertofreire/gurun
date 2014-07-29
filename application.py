@@ -1,9 +1,9 @@
 # coding=UTF-8
-
 from flask import Flask
 from flask import render_template
 from flask import request
-from models import Analise, Numerologia
+from models import Analise
+from numerologia import analisar
 from dynamodb_mapper.model import ConnectionBorg
 from flask.ext.cdn import CDN
 from flask.ext.compress import Compress
@@ -30,7 +30,7 @@ Compress(application)
 def index():
     if request.method == 'POST':
         nome = request.form['nome']
-        analise = Numerologia.analisar(nome)
+        analise = analisar(nome)
         analise.resultado = analise.resultado.decode('utf-8')
         analise.save()
         return render_template('index.html', analise=analise)
@@ -46,6 +46,7 @@ def internal_error(error):
 @application.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0')
