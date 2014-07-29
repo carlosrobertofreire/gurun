@@ -29,38 +29,45 @@ class Analise(DynamoDBModel):
         }
 
 
+DICTIONARY = {
+    'A': 1,
+    'B': 2,
+    'C': 3,
+    'D': 4,
+    'E': 5,
+    'F': 6,
+    'G': 7,
+    'H': 8,
+    'I': 9,
+    'J': 9,
+    'K': 10,
+    'L': 20,
+    'M': 30,
+    'N': 40,
+    'O': 50,
+    'P': 60,
+    'Q': 70,
+    'R': 80,
+    'S': 90,
+    'T': 100,
+    'U': 200,
+    'V': 200,
+    'W': 200,
+    'X': 300,
+    'Y': 300,
+    'Z': 400
+}
+
+INTERPRETACAO_EXCELENTE = {11, 22, 14, 17, 19, 9, 7, 25}
+INTERPRETACAO_BOM = {2, 8, 4, 3, 20, 5, 23, 22}
+INTERPRETACAO_PESSIMO = {1, 16, 18, 10, 15, 13, 12, 21}
+INTERPRETACAO_RUIM = {6, 24}
+
+
 class Numerologia:
 
     @staticmethod
     def calcular(nome):
-        dic = {
-            'A': 1,
-            'B': 2,
-            'C': 3,
-            'D': 4,
-            'E': 5,
-            'F': 6,
-            'G': 7,
-            'H': 8,
-            'I': 9,
-            'J': 9,
-            'K': 10,
-            'L': 20,
-            'M': 30,
-            'N': 40,
-            'O': 50,
-            'P': 60,
-            'Q': 70,
-            'R': 80,
-            'S': 90,
-            'T': 100,
-            'U': 200,
-            'V': 200,
-            'W': 200,
-            'X': 300,
-            'Y': 300,
-            'Z': 400
-        }
         letras = list(filter(lambda c: c.isalpha(), nome))
         soma = 0
         for letra in letras:
@@ -69,7 +76,7 @@ class Numerologia:
             elif letra.isspace() and not letra.isLetter():
                 continue
             else:
-                soma = soma + dic[letra]
+                soma = soma + DICTIONARY[letra]
         resultadosoma = 0
         if soma <= 22:
             resultadosoma = soma
@@ -89,17 +96,13 @@ class Numerologia:
         nome = nome.upper()
         nome_sem_acentos = remover_acentos(nome)
         resultadosoma = Numerologia.calcular(nome_sem_acentos)
-        excelente = {11, 22, 14, 17, 19, 9, 7, 25}
-        bom = {2, 8, 4, 3, 20, 5, 23, 22}
-        pessimo = {1, 16, 18, 10, 15, 13, 12, 21}
-        ruim = {6, 24}
-        if resultadosoma in excelente:
+        if resultadosoma in INTERPRETACAO_EXCELENTE:
             interpretacao = 'EXCELENTE'
-        elif resultadosoma in bom:
+        elif resultadosoma in INTERPRETACAO_BOM:
             interpretacao = 'BOM'
-        elif resultadosoma in pessimo:
+        elif resultadosoma in INTERPRETACAO_PESSIMO:
             interpretacao = 'PÉSSIMO'
-        elif resultadosoma in ruim:
+        elif resultadosoma in INTERPRETACAO_RUIM:
             interpretacao = 'RUIM'
         else:
             interpretacao = 'NÃO INTERPRETADO'
