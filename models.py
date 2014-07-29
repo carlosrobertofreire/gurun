@@ -6,6 +6,7 @@ from unicodedata import normalize
 
 local_tz = pytz.timezone('America/Sao_Paulo')
 
+
 def utc_to_local(utc_dt):
     local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
     print local_tz.normalize(local_dt)
@@ -81,31 +82,30 @@ class Numerologia:
             resultadosoma = somafinal
         return resultadosoma
 
-
     @staticmethod
     def analisar(nome):
         if not nome:
             raise Exception('Nome inválido!')
         nome = nome.upper()
-        nomeSemAcentos = remover_acentos(nome)
-        resultadoSoma = Numerologia.calcular(nomeSemAcentos)
+        nome_sem_acentos = remover_acentos(nome)
+        resultadosoma = Numerologia.calcular(nome_sem_acentos)
         excelente = {11, 22, 14, 17, 19, 9, 7, 25}
         bom = {2, 8, 4, 3, 20, 5, 23, 22}
         pessimo = {1, 16, 18, 10, 15, 13, 12, 21}
         ruim = {6, 24}
-        if resultadoSoma in excelente:
-            resultadoAnalise = 'EXCELENTE'
-        elif resultadoSoma in bom:
-            resultadoAnalise = 'BOM'
-        elif resultadoSoma in pessimo:
-            resultadoAnalise = 'PÉSSIMO'
-        elif resultadoSoma in ruim:
-            resultadoAnalise = 'RUIM'
+        if resultadosoma in excelente:
+            interpretacao = 'EXCELENTE'
+        elif resultadosoma in bom:
+            interpretacao = 'BOM'
+        elif resultadosoma in pessimo:
+            interpretacao = 'PÉSSIMO'
+        elif resultadosoma in ruim:
+            interpretacao = 'RUIM'
         else:
-            resultadoAnalise = 'NÃO INTERPRETADO'
+            interpretacao = 'NÃO INTERPRETADO'
         analise = Analise()
         analise.nome = nome
         analise.data = utc_to_local(datetime.now(utc_tz))
-        analise.valor = resultadoSoma + 0.0
-        analise.resultado = resultadoAnalise
+        analise.valor = resultadosoma + 0.0
+        analise.resultado = interpretacao
         return analise
