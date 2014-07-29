@@ -6,7 +6,6 @@ from unicodedata import normalize
 
 local_tz = pytz.timezone('America/Sao_Paulo')
 
-
 def utc_to_local(utc_dt):
     local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
     print local_tz.normalize(local_dt)
@@ -32,11 +31,7 @@ class Analise(DynamoDBModel):
 class Numerologia:
 
     @staticmethod
-    def analisar(nome):
-        if not nome:
-            raise Exception('Nome inválido!')
-        nome = nome.upper()
-        nomeSemAcentos = remover_acentos(nome)
+    def calcular(nome):
         dic = {
             'A': 1,
             'B': 2,
@@ -65,7 +60,7 @@ class Numerologia:
             'Y': 300,
             'Z': 400
         }
-        letras = list(filter(lambda c: c.isalpha(), nomeSemAcentos))
+        letras = list(filter(lambda c: c.isalpha(), nome))
         soma = 0
         for letra in letras:
             if not letra:
@@ -74,16 +69,26 @@ class Numerologia:
                 continue
             else:
                 soma = soma + dic[letra]
-        resultadoSoma = 0
+        resultadosoma = 0
         if soma <= 22:
-            resultadoSoma = soma
+            resultadosoma = soma
         else:
-            somaString = str(soma)
-            somaFinal = 0
-            letras = list(somaString)
+            somastring = str(soma)
+            somafinal = 0
+            letras = list(somastring)
             for letra in letras:
-                somaFinal = somaFinal + float(letra)
-            resultadoSoma = somaFinal
+                somafinal = somafinal + float(letra)
+            resultadosoma = somafinal
+        return resultadosoma
+
+
+    @staticmethod
+    def analisar(nome):
+        if not nome:
+            raise Exception('Nome inválido!')
+        nome = nome.upper()
+        nomeSemAcentos = remover_acentos(nome)
+        resultadoSoma = Numerologia.calcular(nomeSemAcentos)
         excelente = {11, 22, 14, 17, 19, 9, 7, 25}
         bom = {2, 8, 4, 3, 20, 5, 23, 22}
         pessimo = {1, 16, 18, 10, 15, 13, 12, 21}
