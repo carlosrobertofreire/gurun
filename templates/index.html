@@ -19,15 +19,15 @@
         <h3><strong>{{ analise.nome }}</strong>
         <br/>
         {% if analise.resultado == 'EXCELENTE' %}
-            <span class="label label-success">{{ analise.resultado }}</span>
+            <span id="resultado" class="label label-success">{{ analise.resultado }}</span>
         {% elif analise.resultado == 'BOM' %}
-            <span class="label label-info">{{ analise.resultado }}</span>
+            <span id="resultado" class="label label-info">{{ analise.resultado }}</span>
         {% elif analise.resultado == 'RUIM' %}
-            <span class="label label-warning">{{ analise.resultado }}</span>
+            <span id="resultado" class="label label-warning">{{ analise.resultado }}</span>
         {% elif analise.resultado == 'PÉSSIMO' %}
-            <span class="label label-danger">{{ analise.resultado }}</span>
+            <span id="resultado" class="label label-danger">{{ analise.resultado }}</span>
         {% else %}
-            <span class="label label-default">{{ analise.resultado }}</span>
+            <span id="resultado" class="label label-default">{{ analise.resultado }}</span>
         {% endif %}
         </h3>
     </div><!-- /.row -->

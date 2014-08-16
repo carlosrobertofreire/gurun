@@ -30,9 +30,9 @@ class TestNumerologia(unittest.TestCase):
         self.assertEqual(analise.valor, 7)
         self.assertEqual(analise.resultado, 'EXCELENTE')
 
-    def test_analisar_b(self):
-        analise = analisar(u'b')
-        self.assertEqual(analise.valor, 2)
+    def test_analisar_carlosroberto(self):
+        analise = analisar(u'carlos roberto')
+        self.assertEqual(analise.valor, 8)
         self.assertEqual(analise.resultado, 'BOM')
 
     def test_analisar_db(self):
