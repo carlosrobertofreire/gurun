@@ -7,6 +7,8 @@ from numerologia import analisar
 from dynamodb_mapper.model import ConnectionBorg
 from flask.ext.cdn import CDN
 from flask.ext.compress import Compress
+from flask.ext.restful import Api
+from resources import AnaliseAPI
 
 try:
     conn = ConnectionBorg()
@@ -16,6 +18,9 @@ except:
     pass
 
 application = Flask(__name__)
+api = Api(application)
+
+api.add_resource(AnaliseAPI, '/api/analises', endpoint = 'analises')
 
 application.debug = False
 
