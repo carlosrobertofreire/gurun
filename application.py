@@ -9,6 +9,7 @@ from flask.ext.cdn import CDN
 from flask.ext.compress import Compress
 from flask.ext.restful import Api
 from resources import AnaliseAPI
+from util import remover_caracteres_especiais
 
 try:
     conn = ConnectionBorg()
@@ -34,7 +35,7 @@ Compress(application)
 @application.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        nome = request.form['nome']
+        nome = remover_caracteres_especiais(request.form['nome'])
         analise = analisar(nome)
         analise.resultado = analise.resultado.decode('utf-8')
         analise.save()
