@@ -1,6 +1,6 @@
 # coding=UTF-8
 import pytz
-import re
+import string
 from unicodedata import normalize
 
 local_tz = pytz.timezone('America/Sao_Paulo')
@@ -16,5 +16,8 @@ def remover_acentos(txt):
     return normalize('NFKD', txt).encode('ASCII', 'ignore')
 
 
-def remover_caracteres_especiais(txt):
-    return re.sub('[^A-Za-zÀ-ú]+', ' ', txt)
+def remover_acentos_e_caracteres_especiais(txt):
+    return ''.join(
+        x for x in remover_acentos(txt)  \
+            if (x in string.ascii_letters) or (x in string.whitespace)
+    )
