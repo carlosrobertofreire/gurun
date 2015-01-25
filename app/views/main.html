@@ -1,23 +1,31 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<img src="images/logo128.png" height="128" width="128" class="img-responsive center-block" alt="Numerologia WS" />
+<br />
+<div class="row">
+  <div class="col-lg-8 col-centered">
+    <form action="" method="post">
+      <div class="input-group">
+        <input type="text" class="form-control input-lg" placeholder="Nome" name="nome" autocomplete="off"/>
+        <span class="input-group-btn">
+          <button class="btn btn-lg btn-primary" type="submit" disabled="disabled">Analisar</button>
+        </span>
+      </div>
+    </form>
+  </div>
 </div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+{% if analise %}
+<div class="row">
+  <h3><strong>{{ analise.nome }}</strong>
+    <br/>
+    {% if analise.resultado == 'EXCELENTE' %}
+    <span id="resultado" class="label label-success">{{ analise.resultado }}</span>
+    {% elif analise.resultado == 'BOM' %}
+    <span id="resultado" class="label label-info">{{ analise.resultado }}</span>
+    {% elif analise.resultado == 'RUIM' %}
+    <span id="resultado" class="label label-warning">{{ analise.resultado }}</span>
+    {% elif analise.resultado == 'PÉSSIMO' %}
+    <span id="resultado" class="label label-danger">{{ analise.resultado }}</span>
+    {% else %}
+    <span id="resultado" class="label label-default">{{ analise.resultado }}</span>
+    {% endif %}
+  </h3>
 </div>
