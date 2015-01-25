@@ -13,7 +13,8 @@
   </div>
 </div>
 <div class="row" ng-repeat="result in resultList">
-  <h3><strong>{{result.text}}</strong>
+  <h3>
+    <strong>{{result.text}}</strong>
     <br/>
     <span id="resultado" ng-class="{'label label-success': result.value === 'EXCELENTE', 'label label-info': result.value === 'BOM', 'label label-warning': result.value === 'RUIM', 'label label-danger': result.value === 'PÉSSIMO'}">{{result.value}}</span>
   </h3>
