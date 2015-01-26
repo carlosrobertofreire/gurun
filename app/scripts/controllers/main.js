@@ -7,17 +7,19 @@
  * # MainCtrl
  * Controller of the numerologiaWsApp
  */
-angular.module('numerologiaWsApp').controller('MainCtrl', function($scope) {
+angular.module('numerologiaWsApp').controller('MainCtrl',
+    function($scope, NumerologiaService) {
 
-    $scope.resultList = [];
+        $scope.resultList = [];
 
-    $scope.analyze = function() {
-        $scope.resultList.push({
-            'text': this.name,
-            'number': 3,
-            'value': 'EXCELENTE'
-        })
-    };
+        $scope.analyze = function() {
+            $scope.resultList.push({
+                'text': NumerologiaService.exemplo() + this.name,
+                'number': 3,
+                'value': 'EXCELENTE'
+            })
+        };
 
 
-});
+    }
+);
