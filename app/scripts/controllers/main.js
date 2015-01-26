@@ -19,7 +19,8 @@ angular.module('numerologiaWsApp').controller('MainCtrl',
                     'text': NumerologiaService.exemplo() + this.name,
                     'number': 3,
                     'value': 'EXCELENTE'
-                })
+                });
+                this.name = '';
             }
         };
 
