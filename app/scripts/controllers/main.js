@@ -15,6 +15,7 @@ angular.module('numerologiaWsApp').controller('MainCtrl',
         $scope.analyze = function() {
             if (this.name) {
                 $scope.resultList.push({
+                    'id': new Date().getTime(),
                     'text': NumerologiaService.exemplo() + this.name,
                     'number': 3,
                     'value': 'EXCELENTE'

@@ -12,7 +12,7 @@
     </form>
   </div>
 </div>
-<div class="row" ng-repeat="result in resultList">
+<div class="row" ng-repeat="result in resultList | orderBy:'-id'">
   <h3>
     <strong>{{result.text}}</strong>
     <br/>
