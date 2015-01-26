@@ -9,8 +9,13 @@
  */
 angular.module('numerologiaWsApp').service('NumerologiaService', function() {
 
-    this.exemplo = function() {
-        return 'Olá ';
+    this.analyze = function(text) {
+        return {
+            'id': new Date().getTime(),
+            'text': text,
+            'number': 3,
+            'value': 'EXCELENTE'
+        };
     };
 
 });
