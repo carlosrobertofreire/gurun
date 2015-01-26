@@ -13,11 +13,13 @@ angular.module('numerologiaWsApp').controller('MainCtrl',
         $scope.resultList = [];
 
         $scope.analyze = function() {
-            $scope.resultList.push({
-                'text': NumerologiaService.exemplo() + this.name,
-                'number': 3,
-                'value': 'EXCELENTE'
-            })
+            if (this.name) {
+                $scope.resultList.push({
+                    'text': NumerologiaService.exemplo() + this.name,
+                    'number': 3,
+                    'value': 'EXCELENTE'
+                })
+            }
         };
 
 
