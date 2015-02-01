@@ -25,7 +25,6 @@ angular.module('numerologiaWsApp').service('NumerologiaService', function() {
         for (var i = 0; i < textNormalized.length; i++) {
             sum = sum + this.charValue(textNormalized.charAt(i));
         }
-        console.log('sum ' + sum);
         if (sum <= 22) {
             return sum;
         } else {
@@ -34,7 +33,6 @@ angular.module('numerologiaWsApp').service('NumerologiaService', function() {
             for (var i = 0; i < sumString.length; i++) {
                 finalSum = finalSum + Number(sumString.charAt(i));
             }
-            console.log('finalSum ' + finalSum);
         }
     };
 
