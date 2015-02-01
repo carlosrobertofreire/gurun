@@ -14,5 +14,5 @@ angular.module('numerologiaWsApp').directive('autofocus', ['$timeout', function(
                 $element[0].focus();
             });
         }
-    }
+    };
 }]);
