@@ -77,6 +77,9 @@ angular.module('numerologiaWsApp').service('NumerologiaService', function() {
     };
 
     this.charValue = function(c) {
+        if (!isNaN(c)){
+            return Number(c);
+        }
         switch (c) {
             case 'A':
                 return 1;
