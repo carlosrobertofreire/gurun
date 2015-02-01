@@ -10,30 +10,32 @@
 angular.module('numerologiaWsApp').service('NumerologiaService', function() {
 
     this.analyze = function(text) {
-        var textNormalized = this.normalize(text);
-        var chars = textNormalized.split('');
+        var textValue = this.calculate(text);
+        return {
+            'id': new Date().getTime(),
+            'text': text,
+            'number': textValue,
+            'value': 'EXCELENTE'
+        };
+    };
 
+    this.calculate = function(text) {
+        var textNormalized = this.normalize(text);
         var sum = 0;
         for (var i = 0; i < textNormalized.length; i++) {
             sum = sum + this.charValue(textNormalized.charAt(i));
         }
-
-        console.log(sum);
-        /*var s = "overpopulation";
-        for (var i = 0; i < s.length; i++) {
-            console.log(s.charAt(i));
-        }*/
-
-
-
-        return {
-            'id': new Date().getTime(),
-            'text': text,
-            'number': 3,
-            'value': 'EXCELENTE'
-        };
-
-
+        console.log('sum ' + sum);
+        if (sum <= 22) {
+            return sum;
+        } else {
+            var sumString = String(sum);
+            var finalSum = 0;
+            for (var i = 0; i < sumString.length; i++) {
+                finalSum = finalSum + Number(sumString.charAt(i));
+            }
+            console.log('finalSum ' + finalSum);
+        }
     };
 
     this.charValue = function(c) {
