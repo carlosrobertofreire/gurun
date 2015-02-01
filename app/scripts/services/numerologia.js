@@ -10,11 +10,15 @@
 angular.module('numerologiaWsApp').service('NumerologiaService', function() {
 
     this.analyze = function(text) {
-        textNormalized = this.normalize(text);
+        var textNormalized = this.normalize(text);
         var chars = textNormalized.split('');
 
+        var sum = 0;
+        for (var i = 0; i < textNormalized.length; i++) {
+            sum = sum + this.charValue(textNormalized.charAt(i));
+        }
 
-        //console.log(letters);
+        console.log(sum);
         /*var s = "overpopulation";
         for (var i = 0; i < s.length; i++) {
             console.log(s.charAt(i));
@@ -82,7 +86,8 @@ angular.module('numerologiaWsApp').service('NumerologiaService', function() {
                 return 300;
             case 'z':
                 return 400;
-
+            default:
+                return 0;
         }
     };
 
