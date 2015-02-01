@@ -69,8 +69,8 @@ angular.module('numerologiaWsApp').service('NumerologiaService', function() {
         } else {
             var sumString = String(sum);
             var finalSum = 0;
-            for (var i = 0; i < sumString.length; i++) {
-                finalSum = finalSum + Number(sumString.charAt(i));
+            for (var k = 0; k < sumString.length; k++) {
+                finalSum = finalSum + Number(sumString.charAt(k));
             }
             return finalSum;
         }
