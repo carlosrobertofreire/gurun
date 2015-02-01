@@ -38,53 +38,53 @@ angular.module('numerologiaWsApp').service('NumerologiaService', function() {
 
     this.charValue = function(c) {
         switch (c) {
-            case 'a':
+            case 'A':
                 return 1;
-            case 'b':
+            case 'B':
                 return 2;
-            case 'c':
+            case 'C':
                 return 3;
-            case 'd':
+            case 'D':
                 return 4;
-            case 'e':
+            case 'E':
                 return 5;
-            case 'f':
+            case 'F':
                 return 6;
-            case 'g':
+            case 'G':
                 return 7;
-            case 'h':
+            case 'H':
                 return 8;
-            case 'i':
-            case 'j':
+            case 'I':
+            case 'J':
                 return 9;
-            case 'k':
+            case 'K':
                 return 10;
-            case 'l':
+            case 'L':
                 return 20;
-            case 'm':
+            case 'M':
                 return 30;
-            case 'n':
+            case 'N':
                 return 40;
-            case 'o':
+            case 'O':
                 return 50;
-            case 'p':
+            case 'P':
                 return 60;
-            case 'q':
+            case 'Q':
                 return 70;
-            case 'r':
+            case 'R':
                 return 80;
-            case 's':
+            case 'S':
                 return 90;
-            case 't':
+            case 'T':
                 return 100;
-            case 'u':
-            case 'v':
-            case 'w':
+            case 'U':
+            case 'V':
+            case 'W':
                 return 200;
-            case 'x':
-            case 'y':
+            case 'X':
+            case 'Y':
                 return 300;
-            case 'z':
+            case 'Z':
                 return 400;
             default:
                 return 0;
@@ -103,7 +103,7 @@ angular.module('numerologiaWsApp').service('NumerologiaService', function() {
         str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
             .replace(/\s+/g, '-') // collapse whitespace and replace by -
             .replace(/-+/g, '-'); // collapse dashes
-        return str;
+        return str.toUpperCase();
     };
 
 });
