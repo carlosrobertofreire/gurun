@@ -1,0 +1,21 @@
+<img src="images/logo128.png" height="128" width="128" class="img-responsive center-block" alt="Numerologia WS" />
+<br />
+<div class="row">
+  <div class="col-lg-8 col-centered">
+    <form data-ng-submit="analyze()" novalidate>
+      <div class="input-group">
+        <input type="text" class="form-control input-lg" placeholder="Nome" data-ng-model="name" autocomplete="off" autofocus capitalize/>
+        <span class="input-group-btn">
+          <button class="btn btn-lg btn-primary" type="submit">Analisar</button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row" ng-repeat="result in resultList | orderBy:'-id'">
+  <h3>
+    <strong>{{result.text}}</strong>
+    <br/>
+    <span id="resultado" ng-class="{'label label-success': result.value === 'EXCELENTE', 'label label-info': result.value === 'BOM', 'label label-warning': result.value === 'RUIM', 'label label-danger': result.value === 'PÉSSIMO', 'label label-default': result.value === 'NÃO INTERPRETADO'}">{{result.value}}</span>
+  </h3>
+</div>
