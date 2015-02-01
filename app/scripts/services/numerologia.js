@@ -10,13 +10,52 @@
 angular.module('numerologiaWsApp').service('NumerologiaService', function() {
 
     this.analyze = function(text) {
-        var textValue = this.calculate(text);
+        var textNumber = this.calculate(text);
+        var textValue = this.interpret(textNumber);
         return {
             'id': new Date().getTime(),
             'text': text,
-            'number': textValue,
-            'value': 'EXCELENTE'
+            'number': textNumber,
+            'value': textValue
         };
+    };
+
+    this.interpret = function(textNumber){
+        switch (textNumber) {
+            case 7:
+            case 9:
+            case 11:
+            case 14:
+            case 17:
+            case 19:
+            case 22:
+            case 25:
+                return 'EXCELENTE';
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 8:
+            case 20:
+            case 22:
+            case 23:
+                return 'BOM';
+            case 6:
+            case 24:
+                return 'RUIM';
+            case 1:
+            case 10:
+            case 12:
+            case 13:
+            case 15:
+            case 16:
+            case 18:
+            case 21:
+                return 'PÉSSIMO';
+            default:
+                return 'NÃO INTERPRETADO';
+        }
+
     };
 
     this.calculate = function(text) {
@@ -33,6 +72,7 @@ angular.module('numerologiaWsApp').service('NumerologiaService', function() {
             for (var i = 0; i < sumString.length; i++) {
                 finalSum = finalSum + Number(sumString.charAt(i));
             }
+            return finalSum;
         }
     };
 
