@@ -9,6 +9,10 @@ body {
   margin: 0 auto;
   float: none;
 }
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
 @media (max-width:480px) {
   .input-lg {
     height: 30px;
