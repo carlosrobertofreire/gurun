@@ -4,7 +4,7 @@
   <div class="col-lg-8 col-centered">
     <form data-ng-submit="analyze()" novalidate>
       <div class="input-group">
-        <input type="text" class="form-control input-lg" placeholder="Nome" data-ng-model="name" autocomplete="off" autofocus capitalize/>
+        <input type="text" class="form-control input-lg" placeholder="Nome" ng-model="name" autocomplete="off" autofocus capitalize/>
         <span class="input-group-btn">
           <button class="btn btn-lg btn-primary" type="submit">Analisar</button>
         </span>
@@ -18,4 +18,5 @@
     <br/>
     <span id="resultado" ng-class="{'label label-success': result.value === 'EXCELENTE', 'label label-info': result.value === 'BOM', 'label label-warning': result.value === 'RUIM', 'label label-danger': result.value === 'PÉSSIMO', 'label label-default': result.value === 'NÃO INTERPRETADO'}">{{result.value}}</span>
   </h3>
+  <a ng-click="setText(result.text)" class="glyphicon glyphicon-repeat"></a>
 </div>

@@ -11,14 +11,18 @@ angular.module('numerologiaWsApp').controller('MainCtrl',
     function($scope, NumerologiaService) {
 
         $scope.resultList = [];
+        $scope.name = '';
 
         $scope.analyze = function() {
-            if (this.name) {
-                $scope.resultList.push(NumerologiaService.analyze(this.name));
-                this.name = '';
+            if ($scope.name) {
+                $scope.resultList.push(NumerologiaService.analyze($scope.name));
+                $scope.name = '';
             }
         };
 
+        $scope.setText = function(name) {
+            $scope.name = name;
+        };
 
     }
 );
