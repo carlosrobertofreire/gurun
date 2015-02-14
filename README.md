@@ -1,4 +1,4 @@
-![Picture](http://numerologia.ws/img/png/logo128.png) 
+![Picture](http://numerologia.ws/images/logo128.72eeb6d1.png) 
 
 # Numerologia WS #
 
