@@ -12,11 +12,13 @@
     </form>
   </div>
 </div>
-<div class="row" ng-repeat="result in resultList | orderBy:'-id'">
-  <h3>
-    <strong>{{result.text}}</strong>
-    <br/>
-    <span id="resultado" ng-class="{'label label-success': result.value === 'EXCELENTE', 'label label-info': result.value === 'BOM', 'label label-warning': result.value === 'RUIM', 'label label-danger': result.value === 'PÉSSIMO', 'label label-default': result.value === 'NÃO INTERPRETADO'}">{{result.value}}</span>
-  </h3>
-  <a ng-click="setText(result.text)" class="glyphicon glyphicon-repeat"></a>
+<div class="row">
+  <div class="col-md-3" style="word-break: break-all;" ng-repeat="result in resultList | orderBy:'-id'">
+    <h3>
+      <strong>{{result.text}}</strong>
+      <br/>
+      <span id="resultado" ng-class="{'label label-success': result.value === 'EXCELENTE', 'label label-info': result.value === 'BOM', 'label label-warning': result.value === 'RUIM', 'label label-danger': result.value === 'PÉSSIMO', 'label label-default': result.value === 'NÃO INTERPRETADO'}">{{result.value}}</span>
+    </h3>
+    <a ng-click="setText(result.text)" class="glyphicon glyphicon-repeat"></a>
+  </div>
 </div>
