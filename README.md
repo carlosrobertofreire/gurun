@@ -1,4 +1,4 @@
-![Picture](http://nomes.guru/images/logo128.72eeb6d1.png)
+![Picture](http://nomes.guru/images/logo128.4cf5cccc.png)
 
 # Guru de Nomes #
 
