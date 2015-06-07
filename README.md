@@ -1,12 +1,12 @@
-![Picture](http://numerologia.ws/images/logo128.72eeb6d1.png) 
+![Picture](http://nomes.guru/images/logo128.72eeb6d1.png)
 
-# Numerologia WS #
+# Guru de Nomes #
 
 ### O que é? ###
-Análise numerológica de nomes de forma simples, gratuita e sem propagandas. 
+Análise numerológica de nomes de forma simples, gratuita e sem propagandas.
 
 ### Para que serve? ###
-Ideal para avaliar a escolha de um novo nome para algo/alguém, ou decidir como assinar seu próprio nome. 
+Ideal para avaliar a escolha de um novo nome para algo/alguém, ou decidir como assinar seu próprio nome.
 
 ### Como utilizar? ###
-Acesse [numerologia.ws](http://numerologia.ws)
+Acesse [nomes.guru](http://nomes.guru)

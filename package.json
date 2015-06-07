@@ -1,11 +1,11 @@
 {
-  "name": "numerologia-ws",
-  "version": "2.4.0",
+  "name": "nomes.guru",
+  "version": "3.0.0",
   "private": true,
   "author": "Carlos Roberto Freire",
   "repository": {
       "type": "git",
-      "url": "https://github.com/carlosrobertofreire/numerologia.ws"
+      "url": "https://github.com/carlosrobertofreire/nomes.guru"
   },
   "dependencies": {},
   "devDependencies": {
