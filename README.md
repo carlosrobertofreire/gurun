@@ -1,6 +1,6 @@
 ![Picture](http://nomes.guru/images/logo128.72eeb6d1.png)
 
-# nomes.guru #
+# Guru de Nomes #
 
 ### O que é? ###
 Análise numerológica de nomes de forma simples, gratuita e sem propagandas.
