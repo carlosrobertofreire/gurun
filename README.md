@@ -9,4 +9,4 @@ Análise numerológica de nomes de forma simples, gratuita e sem propagandas.
 Ideal para avaliar a escolha de um novo nome para algo/alguém, ou decidir como assinar seu próprio nome.
 
 ### Como utilizar? ###
-Acesse [nomes.guru](http://carlosrobertofreire.github.io/nomes.guru/#/)
+Acesse agora [nomes.guru](http://carlosrobertofreire.github.io/nomes.guru/#/) e boa escolha!
