@@ -1,6 +1,6 @@
-![Picture](http://nomes.guru/images/logo128.4cf5cccc.png)
+![Picture](http://carlosrobertofreire.github.io//nomes.guru/images/logo128.4cf5cccc.png)
 
-# Guru de Nomes #
+# nomes.guru #
 
 ### O que é? ###
 Análise numerológica de nomes de forma simples, gratuita e sem propagandas.
@@ -9,4 +9,4 @@ Análise numerológica de nomes de forma simples, gratuita e sem propagandas.
 Ideal para avaliar a escolha de um novo nome para algo/alguém, ou decidir como assinar seu próprio nome.
 
 ### Como utilizar? ###
-Acesse [nomes.guru](http://nomes.guru)
+Acesse [nomes.guru](http://carlosrobertofreire.github.io/nomes.guru/#/)
