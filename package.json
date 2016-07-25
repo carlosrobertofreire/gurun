@@ -1,11 +1,11 @@
 {
-  "name": "nomes.guru",
+  "name": "gurun",
   "version": "3.1.0",
   "private": true,
   "author": "Carlos Roberto Freire",
   "repository": {
       "type": "git",
-      "url": "https://github.com/carlosrobertofreire/nomes.guru"
+      "url": "https://github.com/carlosrobertofreire/gurun"
   },
   "dependencies": {},
   "devDependencies": {
