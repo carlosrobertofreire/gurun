@@ -1,12 +1,9 @@
 ![Picture](http://carlosrobertofreire.github.io//gurun/images/logo128.4cf5cccc.png)
 
-# Gurun #
+## O [Gurun](http://www.gurun.com.br) é o seu melhor amigo na hora de escolher um novo nome, assinatura, login, senha etc. ##
 
-### O que é? ###
-Análise numerológica de nomes de forma simples, gratuita e sem propagandas.
+## Isto porque ele sabe absolutamente tudo sobre Numerologia, e analisará as suas escolhas indicando as que te trarão maior sorte ou um tremendo azar. ##
 
-### Para que serve? ###
-Ideal para avaliar a escolha de um novo nome para algo/alguém, ou decidir como assinar seu próprio nome.
+## Quer experimentar? Não custa nada. ##
 
-### Como utilizar? ###
-Clique [aqui](http://carlosrobertofreire.github.io/gurun/#/) e boa escolha!
+## Acesse [www.gurun.com.br](http://www.gurun.com.br)! ##
