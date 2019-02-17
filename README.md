@@ -1,5 +1,5 @@
 ![Picture](http://carlosrobertofreire.github.io//gurun/images/logo128.4cf5cccc.png)
 
-## O [Gurun](http://carlosrobertofreire.github.io/gurun) é o seu melhor amigo na hora de escolher um novo nome, assinatura, login, senha etc. Isto porque ele sabe absolutamente tudo sobre Numerologia, e analisará as suas escolhas indicando as que te trarão maior sorte ou um tremendo azar. 
+## [Gurun](http://carlosrobertofreire.github.io/gurun) is your best friend when you need to choose a name, signature, login etc. It understands everything about Numerology and gives you a score about your choices. 
 
-## Quer [experimentar](http://carlosrobertofreire.github.io/gurun)? Não custa nada.
+## Do you wanna [try](http://carlosrobertofreire.github.io/gurun)? It's free.
